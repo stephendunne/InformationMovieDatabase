@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MVCs00130835_CA2.Models.Actor>
+
+@{
+    ViewBag.Title = "Actor";
+}
+
+<h2>Actors</h2>
+<div>
+ 
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success">@Html.ActionLink("Add Actor", "Create")</button>
+            <button type="button" class="btn btn-warning">@Html.ActionLink("View All Movies", "Index", "Home")</button>
+        </div>
+    @Html.Partial(("_ActorIndex"))
+</div>

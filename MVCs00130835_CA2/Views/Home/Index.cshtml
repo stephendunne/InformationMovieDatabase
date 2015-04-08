@@ -1,0 +1,16 @@
+﻿@model IEnumerable<MVCs00130835_CA2.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h2>@ViewBag.PageTitle</h2>
+    
+    <div>
+        <button type="button" class="btn btn-success">@Html.ActionLink("Add Movie", "Create", new { @class = "btn btn-success btn-xs" })</button>
+        <button type="button" class="btn btn-warning">@Html.ActionLink("View Actors", "Index", "Actor")</button>
+    </div>
+
+    @Html.Partial("_index");
+</div>

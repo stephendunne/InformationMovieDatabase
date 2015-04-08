@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MVCs00130835_CA2.Models.Movie>
+
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieGenre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acting)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieGenre)
+            </td>
+            <td>
+                @*@if (item.Acting.Count == 0)
+                {
+                    <div>None</div>
+                }
+                else*@
+                
+                    @Html.DisplayFor(modelItem => item.Acting.Count)
+                
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MovieId }, new { @class = "btn btn-info btn-xs" })
+                @Html.ActionLink("Details", "Details", new { id = item.MovieId }, new { @class = "btn btn-warning btn-xs" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.MovieId }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>
